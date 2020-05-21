@@ -1,12 +1,12 @@
 
 class Station
-  
-  def initialize(zone)
+
+  attr_reader :zone, :name
+
+  def initialize(zone, name)
     @zone = zone
+    @name = name
   end
 
-  def zone
-    @zone
-  end
 
 end
