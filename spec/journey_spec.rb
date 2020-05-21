@@ -34,6 +34,14 @@ describe "Journey" do
     end
     it "should be penalty_fare if journey is incomplete" do
       journey = Journey.new(card_double)
+      journey.start(station)
+      journey.finish()
+      expect(journey.fare).to eq(6)
+    end
+    it "should be penalty_fare if journey is incomplete" do
+      journey = Journey.new(card_double)
+      journey.start()
+      journey.finish(station)
       expect(journey.fare).to eq(6)
     end
   end
