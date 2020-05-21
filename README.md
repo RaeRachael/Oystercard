@@ -124,3 +124,22 @@ As a customer
 I want to know what zone a station is in
 
 \station.zone
+
+class Journey (for someone)
+
+journey.start(station, card = Oystercard)
+  fare_check (charge penalty if exit_station == nil)
+
+  ---> card.touchin(station)
+
+journey.end(station, card)
+  fare_check (charged penalty if entry_station == nil)
+  ----> card.touchout(station)
+
+
+journey.fare_check
+{entry => \@after_entry, exit => \@exit_station}
+compare zones. (if one is empty charge penalty)
+  ---> journey.incomplete?
+
+journey.incomplete?

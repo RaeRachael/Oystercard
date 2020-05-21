@@ -20,7 +20,7 @@ describe Oystercard do
     expect { subject.top_up(limit + 1) } .to raise_error "Error, card has limit of #{limit}"
   end
 
-  describe '#in_journey?' do
+  describe '#in_journey?' do ### Journey
     it "should return false" do
       expect(subject).not_to be_in_journey
     end
@@ -28,7 +28,7 @@ describe Oystercard do
 
   context "no top up" do
 
-    describe "#my_trips"
+    describe "#my_trips" ## Journey
       it 'should have no journeys at the start' do
         expect(subject.my_trips).to eq([])
       end
@@ -45,13 +45,13 @@ describe Oystercard do
       subject.touch_in(entry_station)
     end
 
-    describe '#touch_in' do
+    describe '#touch_in' do  ## copy over to journey
       it "should change #in_journey to true" do
         expect(subject).to be_in_journey
       end
     end
 
-    describe '#touch_out' do
+    describe '#touch_out' do ## copy over to journey
       it "should change #in_journey to false" do
         subject.touch_out(exit_station)
         expect(subject).not_to be_in_journey
@@ -62,7 +62,7 @@ describe Oystercard do
       end
     end
 
-    describe '#my_trip' do
+    describe '#my_trip' do  ### Journey
       it 'should print my trip' do
         subject.touch_out(exit_station)
         expect(subject.my_trips).to eq([{:entry => entry_station, :exit => exit_station}])
