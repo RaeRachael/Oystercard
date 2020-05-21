@@ -2,12 +2,10 @@ require 'station'
 describe Station do
 
   it 'initialize a station with zone value' do
-    station = Station.new(2)
-    expect(station.zone).to eq 2
+    [2,4,5].each do |num|
+      station = Station.new(num)
+      expect(station.zone).to eq num
+    end
   end
 
-  it 'show the zone of the station' do
-    station = Station.new(1)
-    expect(station.zone).to eq 1
-  end
 end
