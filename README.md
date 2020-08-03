@@ -1,4 +1,9 @@
-# Oystercard
+## Oystercard
+
+### Week 2 Afternoon Task - Main Aims
+
+* Further practice Ruby and Pair Programming
+* Practice Splitting one class into two to follow SRP. 
 
 This is our week 2 Makers challenge, do be worked on during afternoon pairing sessions.
 
