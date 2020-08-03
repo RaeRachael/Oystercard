@@ -13,7 +13,8 @@ Break one class into two classes that work together, while maintaining test cove
 Unit test classes in isolation using mocking
 Explain some basic OO principles and tie them to high level concerns (e.g. ease of change)
 Review another person's code and give them meaningful feedback
-rspe
+
+``` User Stories
 In order to use public transport
 As a customer
 I want money on my card
@@ -61,6 +62,8 @@ I need a penalty charge deducted if I fail to touch in or out
 In order to be charged the correct amount
 As a customer
 I need to have the correct fare calculated
+```
+#### Plan
 
 \#touch_in
 \@in_system = true
@@ -89,45 +92,43 @@ balance check
 
 
 
-
+```
 In order to pay for my journey
 As a customer
 I need to know where I've travelled from
-
+```
 \@entry_station
 
-
+```
 In order to pay for my journey
 As a customer
 I need to know where I've travelled to
-
+```
 \@exit_station
-
+```
 In order to know where I have been
 As a customer
 I want to see to all my trip
-
+```
 {entry => \@after_entry, exit => \@exit_station}
-
+```
 In order to know where I have been
 As a customer
 I want to see to all my previous trips
-
+```
 [{@my_trip}, {@my_trip}, {@my_trip}]
 
-
-
-
+```
 In order to know how far I have travelled
 As a customer
 I want to know what have a station
-
+```
 \class Station
-
+```
 In order to know how far I have travelled
 As a customer
 I want to know what zone a station is in
-
+```
 \station.zone
 
 class Journey (for someone)
